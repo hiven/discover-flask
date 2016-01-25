@@ -11,12 +11,23 @@ class BlogPost(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
+    company = db.Column(db.String, nullable=False)
+    companyurl = db.Column(db.String, nullable=False)
+    location = db.Column(db.String, nullable=False)
+    salary = db.Column(db.String, nullable=False)
     description = db.Column(db.String, nullable=False)
+    jobtype = db.Column(db.String, nullable=False)
     author_id = db.Column(db.Integer, ForeignKey('users.id'))
+
 
     def __init__(self, title, description, author_id):
         self.title = title
         self.description = description
+        self.company = company
+        self.companyurl = companyurl
+        self.location = location
+        self.salary = salary
+        self.jobtype = jobtype
         self.author_id = author_id
 
     def __repr__(self):
