@@ -9,9 +9,5 @@ class MessageForm(Form):
     companyurl = TextField('Companyurl', validators=[DataRequired()])
     location = TextField('Location', validators=[DataRequired()])
     salary = TextField('Salary', validators=[DataRequired()])
-    description = TextField(
-        'Description', validators=[DataRequired(), Length(max=140)])
-    type = SelectField(u'Field name', choices = myChoices, validators = [Required()])
-    
-        type = SelectField('Type', choices = [('full', 'Full-Time'), ('part', 'Part-Time'), ('temp', 'Temporary')]
-    )
+    description = TextField('Description', validators=[DataRequired(), Length(max=140)])
+    jobtype = SelectField('Type', choices=[('full', 'Full-Time'), ('part', 'Part-Time'), ('temp', 'Temporary')], validators=[DataRequired()])
